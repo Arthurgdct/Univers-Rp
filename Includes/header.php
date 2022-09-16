@@ -12,26 +12,25 @@
   <title>Univers Rp</title>
 </head>
 
-<body class="bg-dark-blue">
+<body class="bg-dark-blue text-white">
   <header>
     <!--ajout d'une NavBar de bootstrap personnalisé.-->
     <nav class="navbar navbar-expand-lg bg-dark-blue fixed-top pt-3 pb-3">
       <div class="container-fluid">
-        <a class="navbar-brand text-white courgette" href="#">Univers Rp</a>
+        <a class="navbar-brand text-white courgette" href="index.php">Univers Rp</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon-white"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <?php if ($loggedUser) { ?>
+            <?php if (isset($loggedUser)) { ?>
               <li class="nav-item">
                 <a class="nav-link text-white" aria-current="page" href="#">Personnages</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="#">Jouer</a>
-              </li> <?php } ?>
-            <?php if ($loggedUser) { ?>
-              <li><a class="nav-link text-white" href="#"><?= $user ?></a></li>
+              </li>
+              <li><a class="nav-link text-white" href="profil.php"><?= $user ?></a></li>
             <?php } else { ?>
               <li><a class="nav-link text-white" href="#">Se connecter</a></li>
             <?php } ?>
