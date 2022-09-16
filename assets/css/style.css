@@ -1,8 +1,26 @@
+.bg-top{
+    background-image: url("../img/volcan.jpg") ;
+    padding-top: 7rem;
+    padding-bottom: 2.5rem;
+    background-position: 25% 35%;
+}
+.navbar-toggler-icon-white{
+    background-image: url("../img/1024px-Hamburger_icon_white.svg.png");
+}
+footer{
+    background-image: url("../img/volcanbot.jpg");
+    margin-top: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    background-position: 70% 10%;
+}
+
 .bg-dark-blue{
     background-color: #141318;
 }
-#bg-top{
-    background-image: url("../img/volcan.jpg") ;
-    padding-top: 16rem;
-    padding-bottom: 16rem;
+.courgette{
+    font-family: 'Courgette', cursive;
+}
+.homeCard{
+    height: 16rem;
 }
