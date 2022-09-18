@@ -25,7 +25,7 @@
           <ul class="navbar-nav">
             <?php if (isset($loggedUser)) { ?>
               <li class="nav-item">
-                <a class="nav-link text-white" aria-current="page" href="#">Personnages</a>
+                <a class="nav-link text-white" aria-current="page" href="personnages.php">Personnages</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="#">Jouer</a>

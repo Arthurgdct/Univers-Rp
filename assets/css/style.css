@@ -24,3 +24,16 @@ footer{
 .homeCard{
     height: 16rem;
 }
+.shelf img{
+    width: 280px;
+    height: 280px;
+}
+.mt-10{
+    margin-top: 10rem;
+}
+.mt-8{
+    margin-top: 8rem;
+}
+.mt-7{
+    margin-top: 7rem;
+}
