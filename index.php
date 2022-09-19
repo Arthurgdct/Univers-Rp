@@ -29,9 +29,15 @@ include 'controllers/indexCtrl.php'
   <!-- end carousel -->
   <!-- Starting engagement promo -->
   <div class="d-flex justify-content-around mt-5 mb-5 position-relative">
-    <div class="w-25 border border-white border-5 rounded m-1 homeCard courgette"><img class="w-100" src="assets/img/2328493.png" alt="image de chevalier"><p class="text-center">Envie de Role Play mais pas de materiel ? Pas de soucis !</p></div>
-    <div class="w-25 border border-white border-5 rounded m-1 homeCard courgette"><img class="w-100" src="assets/img/Adventure-Map-icon.png" alt="Carte au trésor"><p class="text-center">Crée vos propres Personnages et partez a l'aventure !</p></div>
-    <div class="w-25 border border-white border-5 rounded m-1 homeCard courgette"><img class="w-100" src="assets/img/JD-02-512.png" alt="pieces d'or"><p class="text-center">Créer vous dès maintenant un compte gratuitement !</p></div>
+    <div class="w-25 border border-white border-5 rounded m-1 homeCard courgette"><img class="w-100" src="assets/img/2328493.png" alt="image de chevalier">
+      <p class="text-center">Envie de Role Play mais pas de materiel ? Pas de soucis !</p>
+    </div>
+    <div class="w-25 border border-white border-5 rounded m-1 homeCard courgette"><img class="w-100" src="assets/img/Adventure-Map-icon.png" alt="Carte au trésor">
+      <p class="text-center">Crée vos propres Personnages et partez a l'aventure !</p>
+    </div>
+    <div class="w-25 border border-white border-5 rounded m-1 homeCard courgette"><img class="w-100" src="assets/img/JD-02-512.png" alt="pieces d'or">
+      <p class="text-center">Créer vous dès maintenant un compte gratuitement !</p>
+    </div>
   </div>
   <a href="inscription.php" class="btn border-white border-5 text-white w-50 position-absolute start-50 translate-middle">S'inscrire !</a>
 </main>

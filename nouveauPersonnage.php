@@ -4,8 +4,8 @@ include 'controllers/nouveauPersonnageCtrl.php'
 <main>
     <form action="" method="post">
         <div class="border border-white border-5 rounded mt-5 mx-5 p-5">
-            <div class="text-center mb-5">
-                <h1 class="fs-5">Identité du personnage:</h1>
+            <div class="text-center mb-3">
+                <h1>Identité du personnage:</h1>
             </div>
 
             <label for="firstname">Prénom</label>
@@ -45,7 +45,7 @@ include 'controllers/nouveauPersonnageCtrl.php'
             </div>
         </div>
         <div class="d-flex justify-content-center mt-5">
-            <input type="button" value="Connexion" class="btn border-white border-5 text-white w-75 mb-3">
+            <a href="nouveauPersonnageStat.php" type="button" value="Connexion" class="btn w-50 mb-3"><img class="w-25" src="assets/img/318275.png" alt="fleche suivant"></a>
         </div>
     </form>
 </main>
