@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <title>Univers Rp</title>
 </head>
 
@@ -19,7 +20,7 @@
       <div class="container-fluid">
         <a class="navbar-brand text-white courgette" href="index.php">Univers Rp</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon-white"></span>
+          <span class="navbar-toggler-icon bg-white rounded"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
@@ -28,11 +29,11 @@
                 <a class="nav-link text-white" aria-current="page" href="personnages.php">Personnages</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Jouer</a>
+                <a class="nav-link text-white" href="salonPersonnage.php">Jouer</a>
               </li>
               <li><a class="nav-link text-white" href="profil.php"><?= $user ?></a></li>
             <?php } else { ?>
-              <li><a class="nav-link text-white" href="#">Se connecter</a></li>
+              <li><a class="nav-link text-white" href="connexion.php">Se connecter</a></li>
             <?php } ?>
           </ul>
         </div>

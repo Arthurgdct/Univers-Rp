@@ -1,6 +1,32 @@
 <footer>
-    <p class="courgette fs-1 pb-5 d-flex justify-content-center"><a class="text-white" href="index.php">Univers Rp</a> </p>
-  </footer>
+  <div class="courgette fs-1 d-flex justify-content-center">
+    <a class="text-white text-decoration-none" href="index.php">Univers Rp</a>
+  </div>
+  <div class="d-flex justify-content-around mt-4">
+    <div>
+      <p>Mentions légals</p>
+      <p>Nous contacter</p>
+    </div>
+    <div>
+      <p>Acceuil</p>
+      <p>A propos</p>
+    </div>
+    <div>
+      <?php if (isset($user)) { ?>
+        <p><a class="text-white text-decoration-none" href="personnages.php">Personnages</a></p>
+        <p><a class="text-white text-decoration-none" href="salonPersonnage.php">Jouer</a></p>
+      <?php } else { ?>
+        <p><a class="text-white text-decoration-none" href="inscription.php">S'inscrire</a></p>
+        <p><a class="text-white text-decoration-none" href="connexion.php">Se connecter</a></p>
+      <?php } ?>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center mt-3">
+    <a class="me-3" href="https://discord.gg/S3aRFu9"><i class="bi bi-discord text-white"></i></a>
+    <a class="me-3" href="https://www.instagram.com/couvarthur/"><i class="bi bi-instagram text-white"></i></a>
+    <a class="me-3" href="https://twitter.com/cawotte11"><i class="bi bi-twitter text-white"></i></a>
+  </div>
+</footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
