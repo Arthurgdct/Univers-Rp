@@ -2,12 +2,12 @@
 include 'controllers/profilCtrl.php'
 ?>
 <main>
-    <div class="border border-white border-5 rounded mt-5 mx-5 p-5">
+    <div class="border border-white border-5 rounded mt-5 mx-5 p-5 w-50-lg mx-auto">
         <div class="text-center">
-            <h2><?= $user ?></h2>
+            <h2><?= $_SESSION['pseudo'] ?></h2>
             <p>Changer de mot de passe:</p>
         </div>
-        <form action="" method="post">
+        <form action="" method="post" class="d-flex flex-column">
             <label for="actualpassword">Mot de passe actuel</label>
             <input type="password" name="actualpassword" id="actualpassword">
             <label for="password" class="mt-3">Nouveau mot de passe</label>

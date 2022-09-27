@@ -1,4 +1,5 @@
 <?php
-$activePage = 'Nouveau Personnage';
+$etape = 2;
+require_once 'nouveauPersonnageCtrl.php';
 include 'Includes/header.php';
 ?>

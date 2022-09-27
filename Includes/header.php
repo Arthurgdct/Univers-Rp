@@ -1,15 +1,16 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="assets/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <title>Univers Rp</title>
 </head>
 
@@ -24,26 +25,30 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <?php if (isset($loggedUser)) { ?>
+            <?php if (isset($_SESSION['pseudo'])) { ?>
               <li class="nav-item">
                 <a class="nav-link text-white" aria-current="page" href="personnages.php">Personnages</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link text-white" href="salonPersonnage.php">Jouer</a>
               </li>
-              <li><a class="nav-link text-white" href="profil.php"><?= $user ?></a></li>
+              <li><a class="nav-link text-white" href="profil.php"><?= $_SESSION['pseudo'] ?></a></li>
             <?php } else { ?>
               <li><a class="nav-link text-white" href="connexion.php">Se connecter</a></li>
+              <li><a class="nav-link text-white" href="inscription.php">S'inscrire</a></li>
             <?php } ?>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="d-flex justify-content-center bg-top">
+    <div class="bg-top text-center">
       <?php
-      if ($activePage) {
-      ?><h2 class="text-white courgette mt-3"><?= $activePage ?></h2>
-      <?php } ?>
+      if ($activePage) { ?>
+        <h2 class="text-white courgette mt-3"><?= $activePage ?></h2>
+        <?php 
+        if ($activePage == 'Bienvenue sur UniversRp') { ?>
+          <p>le site qui va remplacer votre plateau de jeu et vos crayons !</p>
+        <?php }} ?>
     </div>
   </header>
   </nav>

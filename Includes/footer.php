@@ -22,9 +22,9 @@
     </div>
   </div>
   <div class="d-flex justify-content-center mt-3">
-    <a class="me-3" href="https://discord.gg/S3aRFu9"><i class="bi bi-discord text-white"></i></a>
-    <a class="me-3" href="https://www.instagram.com/couvarthur/"><i class="bi bi-instagram text-white"></i></a>
-    <a class="me-3" href="https://twitter.com/cawotte11"><i class="bi bi-twitter text-white"></i></a>
+    <a class="me-3 fs-4" href="https://discord.gg/S3aRFu9"><i class="bi bi-discord text-white"></i></a>
+    <a class="me-3 fs-4" href="https://www.instagram.com/couvarthur/"><i class="bi bi-instagram text-white"></i></a>
+    <a class="me-3 fs-4" href="https://twitter.com/cawotte11"><i class="bi bi-twitter text-white"></i></a>
   </div>
 </footer>
 </body>

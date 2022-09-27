@@ -1,13 +1,15 @@
-.bg-top{
-    background-image: url("../img/volcan.jpg") ;
-    padding-top: 7rem;
+.bg-top {
+    background-image: url("../img/volcan.jpg");
+    padding-top: 8rem;
     padding-bottom: 5rem;
     background-position: 25% 35%;
 }
-.navbar-toggler-icon-white{
+
+.navbar-toggler-icon-white {
     background-image: url("../img/1024px-Hamburger_icon_white.svg.png");
 }
-footer{
+
+footer {
     background-image: url("../img/volcanbot.jpg");
     margin-top: 5rem;
     padding-top: 1rem;
@@ -15,37 +17,103 @@ footer{
     background-position: 70% 10%;
 }
 
-.bg-dark-blue{
+.bg-dark-blue {
     background-color: #141318;
 }
-.courgette{
+
+.courgette {
     font-family: 'Courgette', cursive;
 }
-.homeCard{
+
+.homeCard {
     height: 16rem;
 }
-.shelf img{
+
+.shelf img {
     width: 280px;
     height: 280px;
 }
-.min-vw-80{
+
+.min-vw-80 {
     min-width: 80vw;
 }
-.mt-10{
+
+.mt-10 {
     margin-top: 10rem;
 }
-.mt-8{
+
+.mt-8 {
     margin-top: 8rem;
 }
-.mt-7{
+
+.mt-7 {
     margin-top: 7rem;
 }
-.icone-size{
+
+.icone-size {
     height: 1.5rem;
     width: 1.5rem;
 }
-.profil-pict{
+
+.dice {
+    width: 40px;
+    height: 40px;
+}
+
+.profil-pict {
     height: 130px;
     width: 90px;
 
+}
+
+.profil-pict-2 {
+    height: 180px;
+    width: 120px;
+}
+
+input[type="radio"].profilPict {
+    display: none;
+}
+
+input[type="radio"].profilPict + orcH + orcF + humanH + humanF + elfeH + elfeF + khajiitH + khajiitF {
+    padding: 10rem 10rem;
+    border: 10rem dashed rgb(0, 42, 255);
+}
+
+input[type="radio"].profilPict:checked + orcH + orcF + humanH + humanF + elfeH + elfeF + khajiitH + khajiitF {
+    border: 10rem solid rgb(255, 0, 0);
+}
+
+@media (min-width: 992px) {
+    .w-70-lg {
+        width: 70%;
+        height: 70%;
+    }
+
+    .w-50-lg {
+        width: 50%;
+        height: 50%;
+    }
+
+    .w-15-lg {
+        width: 15%;
+        height: 15%;
+    }
+
+    .w-25-lg {
+        width: 25%;
+        height: 25%;
+    }
+
+    .cover {
+        width: 200px;
+        height: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .w-25-md {
+        width: 25%;
+        height: 25%;
+    }
 }

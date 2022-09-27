@@ -7,7 +7,7 @@ include 'controllers/personnagesCtrl.php';
     if (!empty($characters)) {
         foreach ($characters as $charac) {
     ?>
-            <div class="shelf d-flex justify-content-between border border-white border-5 rounded mt-5">
+            <div class="shelf d-flex justify-content-between border border-white border-5 rounded mt-5 w-50-lg mx-auto">
                 <img class="w-25 h-25" src="assets/img/<?= $charac['profilImg'] ?>" alt="">
                 <div class="">
                     <p class="m-2 mt-5"><?= $charac['firstname'] ?></p>
