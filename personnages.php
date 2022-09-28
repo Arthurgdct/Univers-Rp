@@ -3,6 +3,7 @@ include 'controllers/personnagesCtrl.php';
 ?>
 
 <main>
+
     <?php
     if (!empty($characters)) {
         foreach ($characters as $charac) {

@@ -47,8 +47,7 @@
         <h2 class="text-white courgette mt-3"><?= $activePage ?></h2>
         <?php 
         if ($activePage == 'Bienvenue sur UniversRp') { ?>
-          <p>le site qui va remplacer votre plateau de jeu et vos crayons !</p>
+          <p class="m-3">Le site qui va remplacer votre plateau de jeu et vos crayons !</p>
         <?php }} ?>
     </div>
   </header>
-  </nav>

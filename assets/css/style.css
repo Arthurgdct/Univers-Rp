@@ -73,15 +73,19 @@ footer {
 
 input[type="radio"].profilPict {
     display: none;
+
 }
 
-input[type="radio"].profilPict + orcH + orcF + humanH + humanF + elfeH + elfeF + khajiitH + khajiitF {
-    padding: 10rem 10rem;
-    border: 10rem dashed rgb(0, 42, 255);
+input[type="radio"].profilPict + label {
+    border: 0.4rem dashed #141318;
 }
 
-input[type="radio"].profilPict:checked + orcH + orcF + humanH + humanF + elfeH + elfeF + khajiitH + khajiitF {
-    border: 10rem solid rgb(255, 0, 0);
+input[type="radio"].profilPict:checked + label {
+    border: 0.4rem solid rgb(255, 255, 255);
+    
+}
+.errors{
+    color: red;
 }
 
 @media (min-width: 992px) {

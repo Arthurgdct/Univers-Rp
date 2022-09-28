@@ -12,7 +12,7 @@ class Character extends Db
     public int $intelligence;
     public int $charisma;
     public int $agility;
-    public int $strenght;
+    public int $strength;
     public int $attack;
     public int $defense;
     public string $armors;
@@ -23,12 +23,13 @@ class Character extends Db
     public string $origin;
     public string $background;
     public string $profilPict;
+    public string $user;
 
 
     public function createCharacter()
     {
-        $query = 'INSERT INTO `character` (`firstname`, `lastname`, `gender`,`job`,`age`,`destiny`,`courage`,`intelligence`,`charisma`,`agility`,`strenght`,`attack`,`defense`,`armors`,`spells`,`weapons`,`items`,`origin`,`background`,`profilPict`) VALUES 
-    (:firstname, :lastname, :gender,:job,:age,:destiny,:courage,:intelligence,:charisma,:agility,:strenght,:attack,:defense,:armors,:spells,:weapons,:items,:origin,:background,:profilPict)';
+        $query = 'INSERT INTO `character` (`firstname`, `lastname`, `gender`,`job`,`age`,`destiny`,`courage`,`intelligence`,`charisma`,`agility`,`strength`,`attack`,`defense`,`armors`,`spells`,`weapons`,`items`,`origin`,`background`,`profilPict`, `user`) VALUES 
+    (:firstname, :lastname, :gender,:job,:age,:destiny,:courage,:intelligence,:charisma,:agility,:strength,:attack,:defense,:armors,:spells,:weapons,:items,:origin,:background,:profilPict,:user)';
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':firstname', $this->firstname, PDO::PARAM_STR);
         $stmt->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
@@ -40,7 +41,7 @@ class Character extends Db
         $stmt->bindParam(':intelligence', $this->intelligence, PDO::PARAM_INT);
         $stmt->bindParam(':charisma', $this->charisma, PDO::PARAM_INT);
         $stmt->bindParam(':agility', $this->agility, PDO::PARAM_INT);
-        $stmt->bindParam(':strenght', $this->strenght, PDO::PARAM_INT);
+        $stmt->bindParam(':strength', $this->strength, PDO::PARAM_INT);
         $stmt->bindParam(':attack', $this->attack, PDO::PARAM_INT);
         $stmt->bindParam(':defense', $this->defense, PDO::PARAM_INT);
         $stmt->bindParam(':armors', $this->armors, PDO::PARAM_STR);
@@ -50,6 +51,7 @@ class Character extends Db
         $stmt->bindParam(':origin', $this->origin, PDO::PARAM_STR);
         $stmt->bindParam(':background', $this->background, PDO::PARAM_STR);
         $stmt->bindParam(':profilPict',$this->profilPict, PDO::PARAM_STR);
+        $stmt->bindParam(':user',$this->user, PDO::PARAM_STR);
         $stmt->execute();
     }
 }

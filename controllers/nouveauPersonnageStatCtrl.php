@@ -1,5 +1,5 @@
 <?php
-$etape = 2;
+$etape = 3;
 require_once 'nouveauPersonnageCtrl.php';
-include 'Includes/header.php';
+
 ?>
