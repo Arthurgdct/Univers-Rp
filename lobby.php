@@ -2,14 +2,36 @@
 include 'controllers/lobbyCtrl.php'
 ?>
 <main>
-    <!--INSERER LE CAROUSSEL ET LE SCRIPT JS-->
-    <div class="d-flex ">
-        <div class="d-flex mx-auto">
-            <img class="dice" src="assets/img/de20.png" alt="">
-            <a href="#" class="fs-1 text-center text-decoration-none text-white">+</a>
+    <div class="carouselIg">
+        <div class="slideContainer">
+            <div class="slide">
+                <img class="w-100" src="assets/img/Accordeon1.jpg" alt="slide1">
+            </div>
+            <div class="slide">
+                <img class="w-100" src="assets/img/Accordeon2.jpg" alt="slide2">
+            </div>
+            <div class="slide">
+                <p>Bonjour le monde</p>
+            </div>
         </div>
-        <div class="text-center mx-auto">
-            <a class="btn text-white border courgette" href="#">Lancer les dées</a>
+        <div class="btnContainer">
+            <div class="button-previous" aria-label="Diapositive précédente"> &larr; </div>
+            <div class="button-next" aria-label="Diapositive suivante"> &rarr; </div>
+        </div>
+
+    </div>
+
+    <div id="diceBox" class="d-flex mx-auto bg-primary">
+        <div class="mx-auto d-flex flex-column">
+            <button type="button" id="addDice">+</button>
+            <img id="originalDice" src="assets/img/de20.png" alt="">
+            <button type="button" id="deleteDice">-</a>
+        </div>
+        <div id="diceContainer">
+                <img class="dice" src="assets/img/de20.png" alt="">
+        </div>
+        <div class="text-center mx-auto mt-1">
+        <button id="launchDice" class="btn text-white border courgette">Lancer les dées</button>
         </div>
     </div>
     <section class="d-lg-flex mx-auto w-70-lg">

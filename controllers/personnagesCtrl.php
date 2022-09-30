@@ -1,5 +1,17 @@
 <?php
-$activePage = 'Lobby';
-$characters = ['perso1' => ['firstname' => 'Shagaroth', 'lastname' => 'Grumma', 'race' => 'Orc', 'age' => '32', 'profilImg' => 'd478d52a786cb2d5b4ee55577efdf08f'], 'perso2' => ['firstname' => 'Shagaroth', 'lastname' => 'Grumma', 'race' => 'Orc', 'age' => '32', 'profilImg' => 'd478d52a786cb2d5b4ee55577efdf08f']];
+$activePage = 'Mes Personnages';
+require_once 'Models/Db.php';
+require_once 'Models/Character.php';
 include 'Includes/header.php';
+$perso = new Character;
+$perso->user = $_SESSION['pseudo'];
+$characters = $perso->getInfoRecap();
+
+if (isset($_GET['suppr'])) {
+    $id = htmlspecialchars($_GET['suppr']);
+    if ($perso->user == $_SESSION['pseudo']) {
+        $perso->deleteCharacter($id);
+        $characters = $perso->getInfoRecap();
+    } 
+}
 ?>

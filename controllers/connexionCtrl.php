@@ -26,6 +26,7 @@ if (isset($_POST['validForm'])) {
             if ($user->loginUser()) {
                 $success = 'Félicitation vous êtes connecté.';
                 $_SESSION['pseudo'] = $user->pseudo;
+                header('Location: index.php');
             } else {
                 $errors['password'] = 'Les informations de connexion sont incorrectes';
             }

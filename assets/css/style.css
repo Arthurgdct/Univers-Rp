@@ -5,10 +5,6 @@
     background-position: 25% 35%;
 }
 
-.navbar-toggler-icon-white {
-    background-image: url("../img/1024px-Hamburger_icon_white.svg.png");
-}
-
 footer {
     background-image: url("../img/volcanbot.jpg");
     margin-top: 5rem;
@@ -29,9 +25,77 @@ footer {
     height: 16rem;
 }
 
-.shelf img {
-    width: 280px;
-    height: 280px;
+.carouselIg {
+    position: relative;
+    overflow: hidden;
+
+    width: 90%;
+    margin: 0 auto;
+}
+
+.slide img {
+    height: 100%;
+}
+
+.slide p {
+    margin-top: 20%;
+}
+
+.carouselIg .slideContainer {
+    /* Flex permet d'afficher horizontalement les enfants du slides-container (les diapositives) */
+    display: flex;
+    transition: transform .9s;
+}
+
+.carouselIg .slideContainer .slide {
+    /* Alignement horizontal des diapositives */
+    flex: 0 0 100%;
+    height: 25rem;
+    /* Hauteur pouvant être personnalisée */
+
+    /* Ajustement des bordures */
+    padding: 10px;
+    box-sizing: border-box;
+
+    /* Personnalisation facultative, que vous pouvez adapter à votre affichage */
+    background-color: #141318;
+    text-align: center;
+}
+
+.carouselIg .btnContainer * {
+    /* Forme des boutons */
+    height: 40px;
+    width: 40px;
+    margin: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding-bottom: 50px;
+
+    /* Contenu des boutons */
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+
+    /* Centrer verticalement les boutons */
+    position: absolute;
+    top: calc(50% - 20px);
+
+    /* Interaction avec la souris */
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.25s;
+}
+
+.carouselIg .btnContainer *:hover {
+    /* Effet de survol */
+    opacity: 1;
+}
+
+.carouselIg .btnContainer .button-next {
+    /* Le bouton "next" sera à droite */
+    right: 0;
 }
 
 .min-vw-80 {
@@ -54,21 +118,19 @@ footer {
     height: 1.5rem;
     width: 1.5rem;
 }
-
+#originalDice{
+    width: 80px;
+    height: 80px;
+}
 .dice {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
 }
 
 .profil-pict {
-    height: 130px;
-    width: 90px;
-
-}
-
-.profil-pict-2 {
     height: 180px;
-    width: 120px;
+    width: 130px;
+
 }
 
 input[type="radio"].profilPict {
@@ -76,22 +138,29 @@ input[type="radio"].profilPict {
 
 }
 
-input[type="radio"].profilPict + label {
+input[type="radio"].profilPict+label {
     border: 0.4rem dashed #141318;
 }
 
-input[type="radio"].profilPict:checked + label {
+input[type="radio"].profilPict:checked+label {
     border: 0.4rem solid rgb(255, 255, 255);
-    
+
 }
-.errors{
+
+.errors {
     color: red;
 }
 
 @media (min-width: 992px) {
+
     .w-70-lg {
         width: 70%;
         height: 70%;
+    }
+
+    .w-40-lg {
+        width: 40%;
+        height: 40%;
     }
 
     .w-50-lg {
@@ -113,11 +182,25 @@ input[type="radio"].profilPict:checked + label {
         width: 200px;
         height: 500px;
     }
+
+
 }
 
 @media (min-width: 768px) {
+    .carouselIg .slideContainer .slide {
+        height: 50rem;
+    }
+
     .w-25-md {
         width: 25%;
         height: 25%;
+    }
+
+    .w-40-md {
+        width: 40%;
+        height: 40%;
+    }
+    .slide p {
+        margin-top: 10%;
     }
 }

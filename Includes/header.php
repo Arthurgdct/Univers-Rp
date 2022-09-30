@@ -1,4 +1,8 @@
-<?php session_start() ?>
+<?php session_start();
+ if ($activePage == 'Déconnexion') {
+  unset($_SESSION['pseudo']);
+ }
+ ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 
@@ -32,7 +36,12 @@
               <li class="nav-item">
                 <a class="nav-link text-white" href="salonPersonnage.php">Jouer</a>
               </li>
-              <li><a class="nav-link text-white" href="profil.php"><?= $_SESSION['pseudo'] ?></a></li>
+              <li>
+                <a class="nav-link text-white" href="profil.php"><?= $_SESSION['pseudo'] ?></a>
+              </li>
+              <li>
+                <a class="nav-link text-white" href="deconnexion.php">Déconnexion</a>
+              </li>
             <?php } else { ?>
               <li><a class="nav-link text-white" href="connexion.php">Se connecter</a></li>
               <li><a class="nav-link text-white" href="inscription.php">S'inscrire</a></li>

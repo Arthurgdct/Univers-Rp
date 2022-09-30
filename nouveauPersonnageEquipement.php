@@ -27,7 +27,7 @@ include 'controllers/nouveauPersonnageEquipementCtrl.php'
             <?php if (isset($_SESSION['errors']['items'])){ ?>
                     <p class="errors">⚠️<?= $_SESSION['errors']['items'] ?>⚠️</p>
                 <?php } ?>
-            <label for="agility" class="mt-3">Background du personnage</label>
+            <label for="background" class="mt-3">Background du personnage</label>
             <textarea name="background" placeholder="Originaire du petit village de bourg-palette, Sacha part a l'aventure avec sa nouvelle meilleure amie Ondine ..." id="background" cols="20" rows="5"></textarea>
             <?php if (isset($_SESSION['errors']['background'])){ ?>
                     <p class="errors">⚠️<?= $_SESSION['errors']['background'] ?>⚠️</p>

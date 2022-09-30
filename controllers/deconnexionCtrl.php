@@ -1,4 +1,4 @@
 <?php
-$activePage = 'Profil';
+$activePage = "Déconnexion";
 include 'Includes/header.php';
 ?>
