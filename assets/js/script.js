@@ -46,39 +46,59 @@ class CarouselIg {
 }
 document.getElementById('addDice').addEventListener('click', createDice);
 document.getElementById('deleteDice').addEventListener('click', deleteDice);
-document.getElementById('launchDice').addEventListener('click',launchDice);
+document.getElementById('launchDice').addEventListener('click', launchDice);
+
 function createDice() {
+    let min = document.getElementById('minNumber').value;
+    let max = document.getElementById('maxNumber').value;
     let dice = document.getElementsByClassName('dice');
     let diceContainer = document.getElementById('diceContainer');
-    let newDice = document.createElement('img');
-    console.log(dice);
+    let newDice = document.createElement('p');
     if (dice.length <= 4) {
-        newDice.src = 'assets/img/de20.png';
         newDice.setAttribute('class', 'dice');
+        newDice.appendChild(document.createTextNode(getRandomInt(min, max)))
         diceContainer.appendChild(newDice);
     }
-    
 }
+
 function deleteDice() {
     let dice = document.getElementsByClassName('dice');
     let lastDice = dice[dice.length - 1];
-    console.log(lastDice)
     if (dice.length >= 2) {
         lastDice.remove();
     }
+}
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    max = max + 1;
+    return Math.floor(Math.random() * (max - min) + min)
 }
 
 function launchDice() {
-    let diceList = document.getElementsByClassName('dice');
-    let diceArray = [diceList];
-    let newP = document.createElement('p');
-    diceArray.forEach(element => {
-        console.log(element);
-    });
+    let min = document.getElementById('minNumber').value;
+    let max = document.getElementById('maxNumber').value;
+    if (Math.ceil(min) > Math.floor(max)) {
+        if (typeof errormsg != 'object') {
+            let diceConfig = document.getElementById('diceConfig');
+            let errormsg = document.createElement('p')
+            errormsg.setAttribute('id', 'errormsg');
+            errormsg.setAttribute('class','errors');
+            diceConfig.appendChild(errormsg).innerHTML += document.createTextNode('Attention le premier nombre doit etre plus petit ou égal au second.').nodeValue;
+        }
+    } else {
+        let dicehtmlcollection = document.getElementsByClassName('dice')
+        let diceArray = Array.from(dicehtmlcollection);
+        for (let i = 0; i < diceArray.length; i++) {
+            let dice = document.getElementsByClassName('dice')[i];
+            dice.innerHTML = document.createTextNode(getRandomInt(min, max)).nodeValue;
+        }
+        if (typeof errormsg == 'object') {
+            errormsg.remove();
+        }
+    }
 }
-
-
 window.onload = function () {
     new CarouselIg(document.querySelector('.carouselIg'));
 };

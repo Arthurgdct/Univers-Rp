@@ -118,13 +118,20 @@ footer {
     height: 1.5rem;
     width: 1.5rem;
 }
-#originalDice{
+
+#originalDice {
     width: 80px;
     height: 80px;
 }
+
 .dice {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+    background-size: contain;
     width: 80px;
     height: 80px;
+    background-image: url(../img/de20.png);
 }
 
 .profil-pict {
@@ -200,6 +207,7 @@ input[type="radio"].profilPict:checked+label {
         width: 40%;
         height: 40%;
     }
+
     .slide p {
         margin-top: 10%;
     }

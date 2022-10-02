@@ -21,17 +21,19 @@ include 'controllers/lobbyCtrl.php'
 
     </div>
 
-    <div id="diceBox" class="d-flex mx-auto bg-primary">
-        <div class="mx-auto d-flex flex-column">
-            <button type="button" id="addDice">+</button>
-            <img id="originalDice" src="assets/img/de20.png" alt="">
-            <button type="button" id="deleteDice">-</a>
+    <div id="diceBox" class="d-flex justify-content-between m-5">
+        <div class="d-flex flex-column">
+            <button class="btn btn-success" type="button" id="addDice">+</button>
+            <img id="originalDice" src="assets/img/de20.png" alt="image de dé.">
+            <button class="btn btn-danger" type="button" id="deleteDice">-</a>
         </div>
-        <div id="diceContainer">
-                <img class="dice" src="assets/img/de20.png" alt="">
+        <div id="diceContainer" class="d-flex mt-4">
+            <p class="dice">15</p>
         </div>
-        <div class="text-center mx-auto mt-1">
-        <button id="launchDice" class="btn text-white border courgette">Lancer les dées</button>
+        <div class="text-center mt-1 d-flex flex-column col-2" id="diceConfig">
+            <button id="launchDice" class="btn text-white btn-primary courgette">Lancer les dées</button>
+            <input type="number" id="minNumber" class="mt-3" value="1">
+            <input type="number" id="maxNumber" value="20">
         </div>
     </div>
     <section class="d-lg-flex mx-auto w-70-lg">
