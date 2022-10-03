@@ -39,20 +39,20 @@ include 'controllers/lobbyCtrl.php'
     <section class="d-lg-flex mx-auto w-70-lg">
         <?php
         if (!empty($characters)) {
-            foreach ($characters as $charac) { ?>
-                <div class="mx-3 border border-5 rounded mt-5 ">
+            foreach ($characters as $character) { ?>
+                <div class="mx-auto col-5 border border-5 rounded mt-5 ">
                     <div class="d-flex mb-4">
-                        <div class="d-flex w-25 border border-2 rounded">
-                            <img class="w-100 border border-1" src="assets/img/<?= $charac['profilImg'] ?>" alt="Image de profil du personnage">
+                        <div class="d-flex w-25">
+                            <img class="profil-pict" src="assets/img/<?= $character->profilPict ?>" alt="Image de profil du personnage">
                         </div>
                         <div class="d-flex ms-5 mt-4">
                             <div class="me-2 flex-column">
-                                <p><?= $charac['firstname'] ?></p>
-                                <p><?= $charac['lastname'] ?></p>
+                                <p><?= $character->firstname ?></p>
+                                <p><?= $character->lastname ?></p>
                             </div>
                             <div class="me-1 d-flex flex-column">
-                                <p><?= $charac['age'] ?> ans</p>
-                                <p><?= $charac['job'] ?></p>
+                                <p><?= $character->age ?> ans</p>
+                                <p><?= $character->job ?></p>
                             </div>
                         </div>
                     </div>
@@ -60,34 +60,34 @@ include 'controllers/lobbyCtrl.php'
                         <div class="d-flex flex-column">
                             <div class="d-flex">
                                 <img class="bg-white icone-size" src="assets/img/DestinIcon.png" alt="Icone destin">
-                                <p>Destin : <?= $charac['destiny'] ?></p>
+                                <p>Destin : <?= $character->destiny ?></p>
                             </div>
                             <div class="d-flex">
                                 <img class="bg-white icone-size" src="assets/img/iconCourage.png" alt="Icone courage">
-                                <p>Courage : <?= $charac['courage'] ?></p>
+                                <p>Courage : <?= $character->courage ?></p>
                             </div>
                             <div class="d-flex">
                                 <img class="bg-white icone-size" src="assets/img/IntelIcon.png" alt="Icone intelligence">
-                                <p>Intelligence : <?= $charac['intell'] ?></p>
+                                <p>Intelligence : <?= $character->intelligence ?></p>
                             </div>
                         </div>
                         <div class="d-flex flex-column">
                             <div class="d-flex">
                                 <img class="bg-white icone-size" src="assets/img/iconcharisme.png" alt="Icone charsime">
-                                <p>Charisme : <?= $charac['charisma'] ?></p>
+                                <p>Charisme : <?= $character->charisma ?></p>
                             </div>
                             <div class="d-flex">
                                 <img class="bg-white icone-size" src="assets/img/AgilityIcon.png" alt="Icone Agilité">
-                                <p>Agilité : <?= $charac['agility'] ?></p>
+                                <p>Agilité : <?= $character->agility ?></p>
                             </div>
                             <div class="d-flex">
                                 <img class="bg-white icone-size" src="assets/img/forceicon.png" alt="Icone Force">
-                                <p>Force : <?= $charac['strenght'] ?></p>
+                                <p>Force : <?= $character->strength ?></p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-around text-center">
+                    <div class="d-flex flex-column flex-md-row justify-content-around text-center">
                         <div>
                             <img class="bg-white icone-size" src="assets/img/armorIcon.png" alt="Icone armure">
                             <p>Équipement</p>
@@ -104,11 +104,11 @@ include 'controllers/lobbyCtrl.php'
                     <div class="d-flex justify-content-between mx-3">
                         <div class="d-flex">
                             <img class="bg-white icone-size" src="assets/img/SwordIcon.png" alt="Icone attaque">
-                            <p>Attaque : <?= $charac['attack'] ?></p>
+                            <p>Attaque : <?= $character->attack ?></p>
                         </div>
                         <div class="d-flex">
                             <img class="bg-white icone-size" src="assets/img/shield-png.jpg" alt="Icone défense">
-                            <p>Défense : <?= $charac['defense'] ?></p>
+                            <p>Défense : <?= $character->defense ?></p>
                         </div>
                     </div>
                 </div>

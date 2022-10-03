@@ -1,5 +1,9 @@
 <?php
-$activePage = 'Choix des personnages';
-$characters = ['perso1' => ['firstname' => 'Shagaroth', 'lastname' => 'Grumma', 'race' => 'Orc', 'age' => '32', 'profilImg' => 'd478d52a786cb2d5b4ee55577efdf08f','job'=>'Mineur'], 'perso2' => ['firstname' => 'Shagaroth', 'lastname' => 'Grumma', 'race' => 'Orc', 'age' => '32', 'profilImg' => 'd478d52a786cb2d5b4ee55577efdf08f','job'=>'Alchimiste']];
+$activePage = 'Mes Personnages';
+require_once 'Models/Db.php';
+require_once 'Models/Character.php';
 include 'Includes/header.php';
-?>
+$perso = new Character;
+$perso->user = $_SESSION['pseudo'];
+$characters = $perso->getInfoRecap();
+$i = 0;

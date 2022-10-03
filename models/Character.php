@@ -87,7 +87,7 @@ class Character extends Db
         $result = $stmt->execute();
         return $result;
     }
-    
+
     public function modifyCharacter($id)
     {
         $query = 'UPDATE `character` SET `firstname` = :firstname, `lastname` = :lastname, `gender` = :gender,`job` = :job,`age` = :age,`destiny` = :destiny,`courage` = :courage,`intelligence` = :intelligence,`charisma` = :charisma,`agility` = :agility,`strength` = :strength,`attack` = :attack,`defense` = :defense,`armors` = :armors,`spells` = :spells,`weapons` = :weapons,`items` = :items,`origin` = :origin,`background` = :background,`profilPict` = :profilPict WHERE `id` = :id';
@@ -112,7 +112,26 @@ class Character extends Db
         $stmt->bindParam(':origin', $this->origin, PDO::PARAM_STR);
         $stmt->bindParam(':background', $this->background, PDO::PARAM_STR);
         $stmt->bindParam(':profilPict', $this->profilPict, PDO::PARAM_STR);
-        $stmt->bindParam(':id',$id,PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
+    }
+    public function getCharacters(array $characters): array
+    {
+        $query = 'SELECT `character`.`id`,`lastname`, `firstname`,`job`,`age`,`destiny`,`courage`,`intelligence`,`charisma`,`agility`,`strength`,`attack`,`defense`,`armors`,`spells`,`weapons`,`items`,`profilPicture`.`name` AS profilPict,`origin`.`name` AS origin FROM `character` INNER JOIN `profilpicture` ON `profilpicture`.`id` = `character`.`profilPict` INNER JOIN `origin` ON `origin`.`id` = `character`.`origin` WHERE `character`.`id` IN (';
+        for ($i = 0; $i < count($characters); $i++) {
+
+            if ($i == count($characters) - 1) {
+                $query .= ":character" . $characters[$i];
+            } else {
+                $query .= ":character" . $characters[$i] . ',';
+            }
+        }
+        $query .= ')';
+        $stmt = $this->pdo->prepare($query);
+        for ($i = 0; $i < count($characters); $i++) {
+            $stmt->bindParam(':character' . $characters[$i], $characters[$i], PDO::PARAM_INT);
+        }
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 }

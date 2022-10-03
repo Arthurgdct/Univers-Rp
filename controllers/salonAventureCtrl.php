@@ -1,5 +1,9 @@
 <?php
+
 $activePage = 'Choix de l\'aventure';
-$adventures = ['adventure1' => ['cover' => 'mothership-rpg','name'=>'MotherShip'],'adventure2'=>['cover'=> 'pathfinder','name'=>'Legacy of Dragons']]; 
+require_once 'Models/Db.php';
+require_once 'Models/Adventure.php';
 include 'Includes/header.php';
-?>
+$adven = new Adventure;
+$i = 0;
+$adventures = $adven->getAdventureInfo();
