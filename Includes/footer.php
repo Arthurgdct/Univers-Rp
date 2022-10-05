@@ -2,17 +2,13 @@
   <div class="courgette fs-1 d-flex justify-content-center">
     <a class="text-white text-decoration-none" href="index.php">Univers Rp</a>
   </div>
-  <div class="d-flex justify-content-around mt-4">
+  <div class="d-flex justify-content-evenly mt-4">
     <div>
-      <p>Mentions légals</p>
-      <p>Nous contacter</p>
+      <p><a class="text-white text-decoration-none" href="index.php">Accueil</a></p>
+      <p><a class="text-white text-decoration-none" href="#">Haut de la page</a></p>
     </div>
     <div>
-      <p>Acceuil</p>
-      <p>A propos</p>
-    </div>
-    <div>
-      <?php if (isset($user)) { ?>
+      <?php if (isset($_SESSION['pseudo'])) { ?>
         <p><a class="text-white text-decoration-none" href="personnages.php">Personnages</a></p>
         <p><a class="text-white text-decoration-none" href="salonPersonnage.php">Jouer</a></p>
       <?php } else { ?>

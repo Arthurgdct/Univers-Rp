@@ -29,6 +29,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+            <!--Suivant si l'utilisateur est connecté, la navbar s'adapte-->
             <?php if (isset($_SESSION['pseudo'])) { ?>
               <li class="nav-item">
                 <a class="nav-link text-white" aria-current="page" href="personnages.php">Personnages</a>
@@ -51,6 +52,7 @@
       </div>
     </nav>
     <div class="bg-top text-center">
+      <!--Définition de la page active via le Controller puis affichage du nom dans le header.-->
       <?php
       if ($activePage) { ?>
         <h2 class="text-white courgette mt-3"><?= $activePage ?></h2>

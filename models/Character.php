@@ -25,7 +25,10 @@ class Character extends Db
     public string $profilPict;
     public string $user;
 
-
+    /**
+     * Methode qui crée un nouveau personnage dans la base de donnée.
+     * @return void
+     */
     public function createCharacter()
     {
         $query = 'INSERT INTO `character` (`firstname`, `lastname`, `gender`,`job`,`age`,`destiny`,`courage`,`intelligence`,`charisma`,`agility`,`strength`,`attack`,`defense`,`armors`,`spells`,`weapons`,`items`,`origin`,`background`,`profilPict`, `user`) VALUES 
@@ -54,7 +57,11 @@ class Character extends Db
         $stmt->bindParam(':user', $this->user, PDO::PARAM_STR);
         $stmt->execute();
     }
-    public function getInfoRecap()
+    /**
+     * Récupere les informations des personnage d'un utilisateur
+     * @return array
+     */
+    public function getInfoRecap() :array
     {
         $query = 'SELECT `character`.`id`,`lastname`, `firstname`,`job`,`age`,`profilPicture`.`name` AS profilPict,`origin`.`name` AS origin FROM `character` INNER JOIN `profilpicture` ON `profilpicture`.`id` = `character`.`profilPict` INNER JOIN `origin` ON `origin`.`id` = `character`.`origin` AND  `user` LIKE :user';
         $stmt = $this->pdo->prepare($query);
@@ -62,14 +69,24 @@ class Character extends Db
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
-    public function deleteCharacter($id)
+    /**
+     * Supprime un personnage de la base de donnée en fonction de l'id
+     * @param [int] $id
+     * @return void
+     */
+    public function deleteCharacter(int $id)
     {
         $query = 'DELETE FROM `character` WHERE id = :id';
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
-    public function getCharacterById($id)
+    /**
+     * Récupere les informations d'un personnage en fonction de son id
+     * @param integer $id
+     * @return mixed
+     */
+    public function getCharacterById(int $id) :mixed
     {
         $query = 'SELECT `firstname`, `lastname`, `gender`,`job`,`age`,`destiny`,`courage`,`intelligence`,`charisma`,`agility`,`strength`,`attack`,`defense`,`armors`,`spells`,`weapons`,`items`,`origin`,`background`,`profilPict`,`origin` FROM `character` WHERE `character`.`id` = :id';
         $stmt = $this->pdo->prepare($query);
@@ -77,8 +94,13 @@ class Character extends Db
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
-
-    public function haveThisCharacter($id, $user): bool
+    /**
+     * Vérifie si l'utilisateur courant possede bien ce personnage.
+     * @param integer $id
+     * @param string $user
+     * @return boolean
+     */
+    public function haveThisCharacter(int $id,string $user): bool
     {
         $query = 'SELECT COUNT(*) AS `number` FROM `character` WHERE `id`= :id AND `user` = :user';
         $stmt = $this->pdo->prepare($query);
@@ -87,8 +109,12 @@ class Character extends Db
         $result = $stmt->execute();
         return $result;
     }
-
-    public function modifyCharacter($id)
+    /**
+     * Met a jours dans la base de donnée les information d'un personnage en fonction de son id
+     * @param integer $id
+     * @return void
+     */
+    public function modifyCharacter(int $id)
     {
         $query = 'UPDATE `character` SET `firstname` = :firstname, `lastname` = :lastname, `gender` = :gender,`job` = :job,`age` = :age,`destiny` = :destiny,`courage` = :courage,`intelligence` = :intelligence,`charisma` = :charisma,`agility` = :agility,`strength` = :strength,`attack` = :attack,`defense` = :defense,`armors` = :armors,`spells` = :spells,`weapons` = :weapons,`items` = :items,`origin` = :origin,`background` = :background,`profilPict` = :profilPict WHERE `id` = :id';
         $stmt = $this->pdo->prepare($query);
@@ -115,6 +141,12 @@ class Character extends Db
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
     }
+
+    /**
+     * Methode qui récupere la selection de personnage de l'utilisateur et qui renvoie leur informations afin de les afficher lors de la partie
+     * @param array $characters
+     * @return array
+     */
     public function getCharacters(array $characters): array
     {
         $query = 'SELECT `character`.`id`,`lastname`, `firstname`,`job`,`age`,`destiny`,`courage`,`intelligence`,`charisma`,`agility`,`strength`,`attack`,`defense`,`armors`,`spells`,`weapons`,`items`,`profilPicture`.`name` AS profilPict,`origin`.`name` AS origin FROM `character` INNER JOIN `profilpicture` ON `profilpicture`.`id` = `character`.`profilPict` INNER JOIN `origin` ON `origin`.`id` = `character`.`origin` WHERE `character`.`id` IN (';

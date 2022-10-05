@@ -19,20 +19,21 @@ class User extends Db
         $stmt->bindParam(':password', $this->password, PDO::PARAM_STR);
         $stmt->execute();
     }
-    public function emailExist(): bool
+    public function emailExist($email): bool
     {
         $query = 'SELECT COUNT(*) AS `number` FROM `user` WHERE `email` = :email';
         $stmt = $this->pdo->prepare($query);
-        $stmt->bindParam(':email', $this->email, PDO::PARAM_STR);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_OBJ);
         return $result->number;
     }
-    public function pseudoExist(): bool
+    public function pseudoExist($pseudo): bool
     {
+
         $query = 'SELECT COUNT(*) AS `number` FROM `user` WHERE `pseudo` = :pseudo';
         $stmt = $this->pdo->prepare($query);
-        $stmt->bindParam(':pseudo', $this->pseudo, PDO::PARAM_STR);
+        $stmt->bindParam(':pseudo', $pseudo, PDO::PARAM_STR);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_OBJ);
         return $result->number;

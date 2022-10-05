@@ -58,7 +58,7 @@ if (isset($_POST['validForm1'])) {
     } else {
         $errors['profilPict'] = 'Merci de selectionné une image pour votre personnage.';
     }
-    /*si il y a des erreurs dans la page alors, on stock les messages correspondant dans la varible session puis on redirige
+    /*si il y a des erreurs dans la page alors, on stock les messages correspondant dans la variable session puis on redirige
     notre utilisateur sur la meme page en affichant ces erreurs.*/
 
     if (!empty($errors)) {
