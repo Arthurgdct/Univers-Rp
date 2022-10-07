@@ -133,13 +133,13 @@ footer {
     height: 80px;
     background-image: url(../img/de20.png);
 }
-/*pour cacher les point a cocher lors de la selection d'image par default*/
+
 .profil-pict {
-    height: 180px;
+    height: 230px;
     width: 130px;
 
 }
-
+/*pour cacher les point a cocher lors de la selection d'image par default*/
 input[type="radio"].profilPict {
     display: none;
 

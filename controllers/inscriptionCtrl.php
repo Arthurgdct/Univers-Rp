@@ -48,7 +48,7 @@ if (isset($_POST['validForm'])) {
                 $errors['password'] = 'Merci de renseigner un mot de passe de confirmation.';
             }
         } else {
-            $errors['password'] = 'Attention le mot de passe doit être de au moins 10 caractères';
+            $errors['password'] = 'Attention le mot de passe doit être d\'au moins 10 caractères';
         }
     } else {
         $errors['password'] = 'Merci de renseigner un mot de passe.';

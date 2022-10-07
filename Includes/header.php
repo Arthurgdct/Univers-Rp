@@ -1,8 +1,9 @@
 <?php session_start();
- if ($activePage == 'Déconnexion') {
+if ($activePage == 'Déconnexion') {
   unset($_SESSION['pseudo']);
- }
- ?>
+  session_destroy();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 
@@ -56,9 +57,10 @@
       <?php
       if ($activePage) { ?>
         <h2 class="text-white courgette mt-3"><?= $activePage ?></h2>
-        <?php 
+        <?php
         if ($activePage == 'Bienvenue sur UniversRp') { ?>
           <p class="m-3">Le site qui va remplacer votre plateau de jeu et vos crayons !</p>
-        <?php }} ?>
+      <?php }
+      } ?>
     </div>
   </header>

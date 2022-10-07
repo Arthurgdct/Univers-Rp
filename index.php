@@ -9,13 +9,13 @@ include 'controllers/indexCtrl.php'
     <div id="carousel" class="carousel slide w-100" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="assets/img/Carousselle1.jpg" class="d-block w-100" alt="...">
+          <img src="assets/img/Carousselle1.jpg" class="d-block w-100" alt="Image de démonstration d'une carte">
         </div>
         <div class="carousel-item">
-          <img src="assets/img/Carousselle2.jpg" class="d-block w-100" alt="...">
+          <img src="assets/img/Carousselle2.jpg" class="d-block w-100" alt="Image de démonstration d'une carte">
         </div>
         <div class="carousel-item">
-          <img src="assets/img/Carousselle3.jpg" class="d-block w-100" alt="...">
+          <img src="assets/img/Carousselle3.jpg" class="d-block w-100" alt="Image de démonstration d'une carte">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">

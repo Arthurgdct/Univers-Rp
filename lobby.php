@@ -4,15 +4,17 @@ include 'controllers/lobbyCtrl.php'
 <main>
     <div class="carouselIg">
         <div class="slideContainer">
-            <div class="slide">
-                <img class="w-100" src="assets/img/Accordeon1.jpg" alt="slide1">
-            </div>
-            <div class="slide">
-                <img class="w-100" src="assets/img/Accordeon2.jpg" alt="slide2">
-            </div>
-            <div class="slide">
-                <p>Bonjour le monde</p>
-            </div>
+            <?php foreach ($adventure as $slide) {
+                if ($slide->chapter == null) { ?>
+                    <div class="slide">
+                        <img class="w-100" src="assets/img/<?= $slide->illustration ?>" alt="illustration">
+                    </div>
+                <?php } else { ?>
+                    <div class="slide d-flex justify-content-center fs-2">
+                        <p class="pt-5 col-6"><?= $slide->chapter ?></p>
+                    </div>
+            <?php }
+            } ?>
         </div>
         <div class="btnContainer">
             <div class="button-previous" aria-label="Diapositive précédente"> &larr; </div>
@@ -22,25 +24,25 @@ include 'controllers/lobbyCtrl.php'
     </div>
 
     <div id="diceBox" class="d-flex justify-content-between m-5">
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column my-auto">
             <button class="btn btn-success" type="button" id="addDice">+</button>
             <img id="originalDice" src="assets/img/de20.png" alt="image de dé.">
             <button class="btn btn-danger" type="button" id="deleteDice">-</a>
         </div>
-        <div id="diceContainer" class="d-flex mt-4">
-            <p class="dice">15</p>
+        <div id="diceContainer" class="d-flex flex-wrap mt-4 justify-content-center">
+            <p class="dice">9</p>
         </div>
-        <div class="text-center mt-1 d-flex flex-column col-2" id="diceConfig">
+        <div class="text-center d-flex flex-column col-2 my-auto" id="diceConfig">
             <button id="launchDice" class="btn text-white btn-primary courgette">Lancer les dées</button>
             <input type="number" id="minNumber" class="mt-3" value="1">
             <input type="number" id="maxNumber" value="20">
         </div>
     </div>
-    <section class="d-lg-flex mx-auto w-70-lg">
+    <section class="mx-auto d-lg-flex flex-wrap justify-content-center">
         <?php
-        if (!empty($characters)) {
-            foreach ($characters as $character) { ?>
-                <div class="mx-auto col-5 border border-5 rounded mt-5 ">
+        if (!empty($characters)) { ?>
+            <?php foreach ($characters as $character) { ?>
+                <div class="mx-1 border border-5 col-lg-5 rounded mt-5">
                     <div class="d-flex mb-4">
                         <div class="d-flex w-25">
                             <img class="profil-pict" src="assets/img/<?= $character->profilPict ?>" alt="Image de profil du personnage">
@@ -112,8 +114,10 @@ include 'controllers/lobbyCtrl.php'
                         </div>
                     </div>
                 </div>
-        <?php }
-        } ?>
+            <?php } ?>
+        <?php } else { ?>
+            <p>Une erreurs est survenue veuillez contacter le support.</p>
+        <?php } ?>
     </section>
 </main>
 <?php
