@@ -16,10 +16,10 @@ class Adventure extends Db
 
     public function getAdventure($adventure)
     {
-        $query = 'SELECT `chapter`,`illustration`,`orderNumber`,`title` FROM `contentstory` INNER JOIN `adventure` ON `contentstory`.`adventure` = `adventure`.`id` WHERE `adventure`.`id` = :adventure';
+        $query = 'SELECT `chapter`,`illustration`,`orderNumber` FROM `contentstory` INNER JOIN `adventure` ON `contentstory`.`adventure` = `adventure`.`id` WHERE `adventure`.`id` = :adventure ORDER BY `orderNumber`';
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':adventure',$adventure,PDO::PARAM_INT);
         $stmt->execute();
-        return $stmt->fetch(PDO::FETCH_OBJ);
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 }

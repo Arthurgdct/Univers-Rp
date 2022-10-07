@@ -63,7 +63,7 @@ class Character extends Db
      */
     public function getInfoRecap() :array
     {
-        $query = 'SELECT `character`.`id`,`lastname`, `firstname`,`job`,`age`,`profilPicture`.`name` AS profilPict,`origin`.`name` AS origin FROM `character` INNER JOIN `profilpicture` ON `profilpicture`.`id` = `character`.`profilPict` INNER JOIN `origin` ON `origin`.`id` = `character`.`origin` AND  `user` LIKE :user';
+        $query = 'SELECT `character`.`id`,`lastname`, `firstname`,`job`,`age`,`profilpicture`.`name` AS profilPict,`origin`.`name` AS origin FROM `character` INNER JOIN `profilpicture` ON `profilpicture`.`id` = `character`.`profilPict` INNER JOIN `origin` ON `origin`.`id` = `character`.`origin` AND  `user` LIKE :user';
         $stmt = $this->pdo->prepare($query);
         $stmt->bindParam(':user', $this->user, PDO::PARAM_STR);
         $stmt->execute();
@@ -84,9 +84,9 @@ class Character extends Db
     /**
      * Récupere les informations d'un personnage en fonction de son id
      * @param integer $id
-     * @return mixed
+     * @return object
      */
-    public function getCharacterById(int $id) :mixed
+    public function getCharacterById(int $id) :object
     {
         $query = 'SELECT `firstname`, `lastname`, `gender`,`job`,`age`,`destiny`,`courage`,`intelligence`,`charisma`,`agility`,`strength`,`attack`,`defense`,`armors`,`spells`,`weapons`,`items`,`origin`,`background`,`profilPict`,`origin` FROM `character` WHERE `character`.`id` = :id';
         $stmt = $this->pdo->prepare($query);

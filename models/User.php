@@ -7,10 +7,12 @@ class User extends Db
     public string $password;
     public int $role;
 
-
+/**
+ * methode permettant l'ajout d'un utilisateur dans la bdd
+ * @return void
+ */
     public function createUser()
     {
-        // : est un  marqueur nommé et ? est un marqueur interrogatif
         $query = 'INSERT INTO `user` (`pseudo`, `email`, `password`) VALUES 
         (:pseudo, :email, :password)';
         $stmt = $this->pdo->prepare($query);
@@ -19,7 +21,12 @@ class User extends Db
         $stmt->bindParam(':password', $this->password, PDO::PARAM_STR);
         $stmt->execute();
     }
-    public function emailExist($email): bool
+    /**
+     * Methode de vérification de l'utilisation de l'email
+     * @param [string] $email
+     * @return boolean
+     */
+    public function emailExist(string $email): bool
     {
         $query = 'SELECT COUNT(*) AS `number` FROM `user` WHERE `email` = :email';
         $stmt = $this->pdo->prepare($query);
@@ -28,7 +35,12 @@ class User extends Db
         $result = $stmt->fetch(PDO::FETCH_OBJ);
         return $result->number;
     }
-    public function pseudoExist($pseudo): bool
+    /**
+     * methode de vérification de disponibilité du pseudo
+     * @param [string] $pseudo
+     * @return boolean
+     */
+    public function pseudoExist(string $pseudo): bool
     {
 
         $query = 'SELECT COUNT(*) AS `number` FROM `user` WHERE `pseudo` = :pseudo';
@@ -38,6 +50,10 @@ class User extends Db
         $result = $stmt->fetch(PDO::FETCH_OBJ);
         return $result->number;
     }
+    /**
+     * Methode qui permet de vérifier les données envoyer par l'utilisateur afin de le connecter ou non
+     * @return boolean
+     */
     public function loginUser(): bool
     {
         $query = "SELECT * FROM `user` WHERE `pseudo` = :pseudo";
